@@ -267,21 +267,21 @@
 #endif /* SLES11 */
 #endif /* RHEL6 */
 
-#if !KFEATURE_HAS_WAIT_FOR_COMPLETION_IO_TIMEOUT
+/* #if !KFEATURE_HAS_WAIT_FOR_COMPLETION_IO_TIMEOUT */
 static inline unsigned long wait_for_completion_io_timeout(struct completion *x,
 			__attribute__((unused)) unsigned long timeout)
 {
 	return wait_for_completion_timeout(x, timeout);
 }
-#endif
+/* #endif */
 
-#if !KFEATURE_HAS_WAIT_FOR_COMPLETION_IO
+/* #if !KFEATURE_HAS_WAIT_FOR_COMPLETION_IO */
 static inline unsigned long wait_for_completion_io(struct completion *x)
 {
 	wait_for_completion(x);
 	return 0;
 }
-#endif
+/* #endif */
 
 #if KFEATURE_HAS_2011_03_INTERRUPT_HANDLER
 	/* new style interrupt handler */
